@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<style>
+    nav {
+        background-color: #efe5d0;
+        margin: 10px 10px 0px 10px;
+    }
+    nav ul {
+        margin: 0px;
+        list-style-type: none;
+        padding: 5px 0px 5px 0px;
+    }
+    nav ul li {
+        display: inline;
+        padding: 5px 10px 5px 10px;
+    }
+    nav ul li a:link, nav ul li a:visited {
+        color: #954b4b;
+        border-bottom: none;
+        font-weight: bold;
+    }
+    nav ul li.selected {
+        background-color: #c8b99c;
+    }
+</style>
+<body>
+<nav>
+    <ul>
+        <li><a href="">MOVIES</a></li>
+        <li><a href="apple">ACTORS</a></li>
+        <li><a href="">РЕЦЕПТЫ</a></li>
+        <li><a href="">АДРЕСА</a></li>
+    </ul>
+</nav>
+
+<div th:each="person:${key_indexActor}">
+    <a th:href="@{/apple/{id}(id=${person.getId_actor()})}"
+       th:text="${person.getName_actor()}">user</a>
+<a th:href="@{/apple/{id}/edit(id=${person.getId_actor()})}">Edit</a>
+
+
+</div>
+<br/>
+<hr/>
+<a href="/apple/new">Create</a>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Id_Actor</title>
+</head>
+<body>
+
+    <p th:text="${id_actor.getName_actor()}">Id</p>
+
+    <form th:method="DELETE" th:action="@{/apple/{id}(id=${id_actor.getId_actor()})}">
+        <input type="submit" value="Delete"/>
+    </form>
+</body>
+</html>

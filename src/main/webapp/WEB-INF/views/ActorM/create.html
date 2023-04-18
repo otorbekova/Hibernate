@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/apple}" th:object="${create_key}">
+    <label for="name_actor" > Enter name</label>
+    <input type="text" th:field="*{name_actor}" id="name_actor"/>
+    <div style="color:red" th:if="${#fields.hasErrors('name_actor')}" th:errors="*{name_actor}">Name errors</div>
+    <br/>
+    <input type="submit" value="Created!"/>
+</form>
+
+</body>
+</html>

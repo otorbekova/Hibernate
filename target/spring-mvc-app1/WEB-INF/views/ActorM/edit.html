@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/apple/{id}(id=${update_actor.getId_actor()})}" th:object="${update_actor}">
+    <label for="name_actor">Enter name: </label>
+    <input type="text" th:field="*{name_actor}" id="name_actor"/>
+    <div style="color:red" th:if="${#fields.hasErrors('name_actor')}" th:errors="*{name_actor}">Name Error</div>
+    <br/>
+    <input type="submit" value="Update!"/>
+</form>
+</body>
+</html>
